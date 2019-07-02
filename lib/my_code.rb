@@ -54,7 +54,7 @@ end
 def reduce_to_all_true(source_array)
   result = false
   i = 0
-  while source_array[i]
+  while i < source_array.length
     if source_array[i] == true
       result = true
     elsif source_array[i] == false
@@ -70,7 +70,7 @@ end
 def reduce_to_any_true(source_array)
   result = false
   i = 0 
-  while source_array[i]
+  while i < source_array.length
     if source_array[i] == true
       return true
     end
