@@ -52,11 +52,19 @@ def reduce_to_total(source_array, starting_point = 0)
 end
 
 def reduce_to_all_true(source_array)
-  if source_array.all?
-    return false
-  elseif source_array.any?
-    return true
+  result = false
+  i = 0
+  while source_array[i]
+    if source_array[i] == true
+      result = true
+    elsif source_array[i] == false
+      return false
+    end
+    
+    i += 1
   end
+  
+  result
 end
 
 def reduce_to_any_true(source_array)
@@ -64,9 +72,6 @@ def reduce_to_any_true(source_array)
   i = 0 
   while source_array[i]
     if source_array[i] == true
-      result = true 
-      return result
-      elsif source_array[0..-1] == true
       return true
     end
     
